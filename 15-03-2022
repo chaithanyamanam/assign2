@@ -1,0 +1,124 @@
+SQL> update apsrtc ticket_price=ticket_price+100 where kms>=500;
+update apsrtc ticket_price=ticket_price+100 where kms>=500
+                          *
+ERROR at line 1:
+ORA-00971: missing SET keyword
+
+
+SQL> update apsrtc set ticket_price=ticket_price+100 where kms>=500;
+
+4 rows updated.
+
+SQL> select * from apsrtc;
+
+ SERVICENO SERVICETYP STARTLOCATION        DESTINATION                 KMS
+---------- ---------- -------------------- -------------------- ----------
+TICKET_PRICE
+------------
+         1 luxury     rjy                  kkd                         500
+         650
+
+         2 luxury     vskp                 hyd                         700
+         850
+
+         3 passanger  hyd                  vskp                        700
+         850
+
+
+ SERVICENO SERVICETYP STARTLOCATION        DESTINATION                 KMS
+---------- ---------- -------------------- -------------------- ----------
+TICKET_PRICE
+------------
+         4 express    rjy                  vskp                        400
+         450
+
+         5 express    vskp                 rjy                         400
+         450
+
+         6 passanger  kkd                  rjy                         500
+         650
+
+
+ SERVICENO SERVICETYP STARTLOCATION        DESTINATION                 KMS
+---------- ---------- -------------------- -------------------- ----------
+TICKET_PRICE
+------------
+         7 passanger  kkd                  pal                         250
+         500
+
+         8 passanger  pal                  kkd                         250
+         500
+
+         9 express    srpm                 kkd                         100
+         150
+
+
+ SERVICENO SERVICETYP STARTLOCATION        DESTINATION                 KMS
+---------- ---------- -------------------- -------------------- ----------
+TICKET_PRICE
+------------
+        10 luxury     kkd                  srpm                        100
+         200
+
+
+10 rows selected.
+
+SQL> update apsrtc set ticket_price=ticket_price-100 where kms<500;
+
+6 rows updated.
+
+SQL> select * from apsrtc;
+
+ SERVICENO SERVICETYP STARTLOCATION        DESTINATION                 KMS
+---------- ---------- -------------------- -------------------- ----------
+TICKET_PRICE
+------------
+         1 luxury     rjy                  kkd                         500
+         650
+
+         2 luxury     vskp                 hyd                         700
+         850
+
+         3 passanger  hyd                  vskp                        700
+         850
+
+
+ SERVICENO SERVICETYP STARTLOCATION        DESTINATION                 KMS
+---------- ---------- -------------------- -------------------- ----------
+TICKET_PRICE
+------------
+         4 express    rjy                  vskp                        400
+         350
+
+         5 express    vskp                 rjy                         400
+         350
+
+         6 passanger  kkd                  rjy                         500
+         650
+
+
+ SERVICENO SERVICETYP STARTLOCATION        DESTINATION                 KMS
+---------- ---------- -------------------- -------------------- ----------
+TICKET_PRICE
+------------
+         7 passanger  kkd                  pal                         250
+         400
+
+         8 passanger  pal                  kkd                         250
+         400
+
+         9 express    srpm                 kkd                         100
+          50
+
+
+ SERVICENO SERVICETYP STARTLOCATION        DESTINATION                 KMS
+---------- ---------- -------------------- -------------------- ----------
+TICKET_PRICE
+------------
+        10 luxury     kkd                  srpm                        100
+         100
+
+
+10 rows selected.
+
+SQL>
